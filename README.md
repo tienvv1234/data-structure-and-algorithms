@@ -18,3 +18,5 @@ we can measure the big-O of function using the performance.now()
 
 - this is linear our number of inputs increase the number of operations increase as well
 - the big o depends on the number of inputs
+
+### section 6 O(1)
