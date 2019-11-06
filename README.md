@@ -1,3 +1,5 @@
+![Big O notation](https://cdn-media-1.freecodecamp.org/images/1*KfZYFUT2OKfjekJlCeYvuQ.jpeg)
+
 good code can describe in two things:
 
 1. Readable
@@ -13,3 +15,6 @@ we can measure the big-O of function using the performance.now()
 ## lecture Big O
 
 ### section 5 O(n)
+
+- this is linear our number of inputs increase the number of operations increase as well
+- the big o depends on the number of inputs
