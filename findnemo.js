@@ -14,5 +14,4 @@ function findNemo(array) {
     let t1 = performance.now();
     console.log('Call to find Nemo took ' + (t1 - t0) + ' milliseconds');
 }
-
 findNemo(large); 
