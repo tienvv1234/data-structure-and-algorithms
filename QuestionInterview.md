@@ -1,5 +1,5 @@
 1) Could you introduce about yourself ( giới thiệu tên, tuổi, tình trạng hôn nhân, công việc hiện tại …)
-- Hi My name is Tiến, I'm 29 years old. I graduated from fpt-aptech in 2013, i have 6 years experience in developer.
+- Hi My name is Tiến, I'm 29 years old. I graduated from fpt-aptech in 2013, i have 9 years experience in software developer.
 i have been working as a software developer for 6 years, my current job is working with nodejs for the ppclink company
 
 - Hi My name is Tiến, I'm 29 years old, I married and we have had a daughter. I graduated from fpt-aptech in 2013 and have 6 years experience as a software developer. My current job is working with nodejs for the ppclink company 

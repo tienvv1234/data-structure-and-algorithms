@@ -175,3 +175,7 @@ pros : it's a fairly simple implementation especially compare to the doubly one.
 
 - doubly
 the good side of is that it can be iterated or traversa both from the front or from the back. another beauty is that if you need to delete a previous node you don't need to traverse from the head node and find what the previous notice which a singly linked list has no concept of, you can do that fairly easily with a doubly linked list, it's more complex than singly and requires more memory and storage, so doubly linked list are really good when you don't have that much limitation on memory, and when you want good operation for searching for elements such as searching backward(tìm kiếm ngược dòng) instead of fort
+
+### LRUCache
+- LRU is a cache eviction policy, it stands for least recently used, it's a policy that we can use to decide which item to remove from the cache when the cache reaches it's capacity, so when we add a new item to the cache, we need to decide which item to remove, and we use the LRU policy to make that decision, the LRU policy says that we should remove the least recently used item, so
+[LRU](LRUCache.png)
