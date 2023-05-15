@@ -1,0 +1,17 @@
+POST http://localhost:3001/v1/api/user
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "amount": 10
+}
+
+###
+POST http://localhost:3001/v1/api/transfer
+Content-Type: application/json
+
+{
+  "fromId": 1,
+  "toId": 2,
+  "amount": 100
+}
