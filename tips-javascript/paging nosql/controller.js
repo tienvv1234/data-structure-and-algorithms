@@ -1,5 +1,5 @@
 const { default: axios } = require("axios");
-const { insertComments, insertManyComments, list, list2 } = require("./service");
+const { insertComments, insertManyComments, list, list2, insertBucket, listPaging } = require("./service");
 
 const controller = module.exports = {
     insertComments : async (req, res, next) => {
@@ -76,5 +76,34 @@ const controller = module.exports = {
         } catch (error) {
             console.log(error);
         }
+    },
+    insertBucket : async (req, res, next) => {
+        try {
+            const { blogId, commentId, email, name, body } = req.body;
+            return res.status(200).json(await insertBucket({
+                blogId,
+                commentId,
+                email,
+                name,
+                body
+            }))
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    listPaging: async (req, res, next) => {
+        const { blogId, page = 1, limit = 1 } = req.query;
+        return res.status(200).json({
+            status: "success",
+            elements: await listPaging({
+                blogId,
+                page,
+                limit
+            }),
+            meta: {
+                page,
+                limit
+            }
+        });
     }
 };

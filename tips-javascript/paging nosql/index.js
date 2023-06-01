@@ -21,6 +21,10 @@ app.get('/list', controller.list);
 
 app.get('/list2', controller.list2);
 
+app.post('/insertBucket', controller.insertBucket);
+
+app.get('/list3', controller.listPaging);
+
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
 })
