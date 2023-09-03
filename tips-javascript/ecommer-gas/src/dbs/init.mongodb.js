@@ -1,9 +1,6 @@
 const mongose = require('mongoose');
-
-const connectString = 'mongodb://localhost:27120/ecommer-gas';
-
-
-
+const { db: { host, port, name }  } = require('../configs/config.mongdb');
+const connectString = `mongodb://${host}:${port}/${name}`;
 
 class Database {
     constructor() {
@@ -17,7 +14,6 @@ class Database {
                 color: true
             });
         }
-
         mongose.connect(connectString).then(() => {
             console.log('Connected to MongoDB');
         }).catch((err) => {
