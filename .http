@@ -36,3 +36,8 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/list3?blogId=1&page=2
+
+
+###
+GET http://localhost:3000/api/data
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNDUwMTA0MDUxNzA3MTAwMzg5NSIsImVtYWlsIjoidGllbnZ2MTIzNEBnbWFpbC5jb20iLCJpYXQiOjE2OTA5NDczNjQsImV4cCI6MTY5MDk1MDk2NH0.xPx4Wn05PFp9QEu6RAetLuHMo0Q-fpuxWEy8tv-TovI

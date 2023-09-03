@@ -45,3 +45,9 @@ const valid = validate(data)
 console.log(valid);
 if (!valid) console.log(validate.errors)
 console.log(data)
+
+// it is imperative that the reference to the errors is copied 
+// the next time ajv runs the errors object could be overridden 
+// because under the hood it is just a pointer, \
+// that's why the reference needs to be copied in the same executiono block. 
+// Note that Node is single-threaded and you do not have concurrency
