@@ -3,9 +3,10 @@
 ### signup
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
+x-api-key: 965ab7d2099630bcdfd5e60143029624cde5050330bdf689
 
 {
     "name": "test",
     "password": "test123",
-    "email": "t1412es12145@test.com"
+    "email": "t1412es1212145@test.com"
 }
