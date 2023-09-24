@@ -8,5 +8,27 @@ x-api-key: 965ab7d2099630bcdfd5e60143029624cde5050330bdf689
 {
     "name": "test",
     "password": "test123",
-    "email": "t1412es1212145@test.com"
+    "email": "tes11141121@test.com"
+}
+
+### login
+POST {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key: 965ab7d2099630bcdfd5e60143029624cde5050330bdf689
+
+{
+    "password": "test123",
+    "email": "tes11141121@test.com"
+}
+
+###
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-client-id: 650fd96f6fd95caed10332c0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTBmZDk2ZjZmZDk1Y2FlZDEwMzMyYzAiLCJlbWFpbCI6InRlczExMTQxMTIxQHRlc3QuY29tIiwiaWF0IjoxNjk1NTQwMDgwLCJleHAiOjE2OTU3MTI4ODB9.tinIkGhwg58k6oNbubWdHNx9JI87mCiZsXeoUGmv2WM
+x-api-key: 965ab7d2099630bcdfd5e60143029624cde5050330bdf689
+
+{
+    "password": "test123",
+    "email": "tes11141121@test.com"
 }

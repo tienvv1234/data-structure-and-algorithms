@@ -4,7 +4,8 @@ const crypto = require('crypto');
 const KeyTokenService = require("./keyToken.service");
 const { createTokenPair } = require("../auth/authUtils");
 const { getInfoData } = require("../utils");
-const { BadRequestError } = require("../core/error.response");
+const { BadRequestError, AuthFailureError } = require("../core/error.response");
+const { findByEmail } = require("./shop.service");
 
 const RoleShop = {
     SHOP: '0001',
@@ -14,12 +15,49 @@ const RoleShop = {
 }
 
 class AccessService {
+    static logout = async (keyStore) => {
+        return await KeyTokenService.removeKeyById(keyStore._id);
+    }
+    
+    static login = async ({ email, password, refreshToken = null }) => {
+        const foundShop = await findByEmail(email);
+        if (!foundShop) {
+            throw new BadRequestError('Error: Shop not found');
+        }
+
+        const isMatch = await bcrypt.compare(password, foundShop.password);
+        if (!isMatch) {
+            throw new AuthFailureError('Authentication Error');
+        }
+
+        const privateKey = crypto.randomBytes(64).toString('hex');
+        const publicKey = crypto.randomBytes(64).toString('hex');
+
+        const tokens = await createTokenPair({
+            userId: foundShop._id,
+            email,
+        }, publicKey, privateKey);
+
+        await KeyTokenService.createKeyToken({
+            userId: foundShop._id,
+            publicKey,
+            privateKey,
+            refreshToken: tokens.refreshToken
+        })
+
+        return {
+            shop: getInfoData({ fields: ['_id', 'name', 'email'], object: foundShop }),
+            tokens
+        }
+    }
+
     static signUp = async ({name, email, password}) => {
         try {
             // step 1: check email exists
             // lean() giảm thiểu data từ mongo từ mongo Object ra object javascript thuần
-            const holderShop = await shopModel.findOne({ email: 'email' }).lean();
-            if (!holderShop) {
+            const holderShop = await shopModel.findOne({ email: email }).lean();
+            console.log('holderShop', holderShop);
+            if (holderShop) {
                 throw new BadRequestError('Error: Shop already exists');
             }
 
@@ -88,6 +126,7 @@ class AccessService {
                 metadata: null
             }
         } catch (error) {
+            console.log('error', error);
             return {
                 code: 'xxx',
                 message: error.message,

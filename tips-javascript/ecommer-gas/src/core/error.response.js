@@ -11,6 +11,8 @@ const StatusCode = {
 const ReasonStatusCode = {
     FORBIDDEN: 'Forbidden',
     CONFLICT: 'Conflict',
+    BAD_REQUEST: 'Bad Request',
+    UNAUTHORIZED: 'Unauthorized',
 }
 
 class ErrorResponse extends Error {
@@ -21,18 +23,32 @@ class ErrorResponse extends Error {
 }
 
 class ConflictError extends ErrorResponse {
-    constructor(message, statusCode) {
+    constructor(message = ReasonStatusCode.CONFLICT, statusCode = StatusCode.CONFLICT) {
         super(message, statusCode);
     }
 }
 
 class BadRequestError extends ErrorResponse {
-    constructor(message, statusCode) {
+    constructor(message = ReasonStatusCode.BAD_REQUEST, statusCode = StatusCode.BAD_REQUEST) {
+        super(message, statusCode);
+    }
+}
+
+class AuthFailureError extends ErrorResponse {
+    constructor(message = ReasonStatusCode.UNAUTHORIZED, statusCode = StatusCode.UNAUTHORIZED) {
+        super(message, statusCode);
+    }
+}
+
+class NotFoundError extends ErrorResponse {
+    constructor(message = ReasonStatusCode.NOT_FOUND, statusCode = StatusCode.NOT_FOUND) {
         super(message, statusCode);
     }
 }
 
 module.exports = {
     ConflictError,
-    BadRequestError
+    BadRequestError,
+    AuthFailureError,
+    NotFoundError,
 }

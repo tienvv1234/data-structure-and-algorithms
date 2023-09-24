@@ -49,15 +49,7 @@ const permission = (permission) => {
     }
 }
 
-const asyncHandler = fn => {
-    return (req, res, next) => {
-        // Promise.resolve(fn(req, res, next)).catch(next);
-        fn(req, res, next).catch(next);
-    }
-}
-
 module.exports = {
     apiKeys,
-    permission,
-    asyncHandler
+    permission
 }
