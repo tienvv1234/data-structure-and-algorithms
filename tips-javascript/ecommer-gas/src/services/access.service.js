@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const KeyTokenService = require("./keyToken.service");
 const { createTokenPair } = require("../auth/authUtils");
 const { getInfoData } = require("../utils");
+const { BadRequestError } = require("../core/error.response");
 
 const RoleShop = {
     SHOP: '0001',
@@ -18,11 +19,8 @@ class AccessService {
             // step 1: check email exists
             // lean() giảm thiểu data từ mongo từ mongo Object ra object javascript thuần
             const holderShop = await shopModel.findOne({ email: 'email' }).lean();
-            if (holderShop) {
-                return {
-                    code: 'xxxx',
-                    message: 'shop already exists',
-                }
+            if (!holderShop) {
+                throw new BadRequestError('Error: Shop already exists');
             }
 
             // step 2: create new shop
