@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "![Big O notation](https://cdn-media-1.freecodecamp.org/images/1*KfZYFUT2OKfjekJlCeYvuQ.jpeg)",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "nodemon",
+    "start:server1": "node ./generator-function/data-integration/src/server1.js",
+    "start:server2": "node ./generator-function/data-integration/src/server2.js",
+    "start:client": "node ./generator-function/data-integration/src/client.js" 
   },
   "repository": {
     "type": "git",
