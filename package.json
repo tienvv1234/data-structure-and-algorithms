@@ -7,9 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon",
-    "start:server1": "node ./generator-function/data-integration/src/server1.js",
-    "start:server2": "node ./generator-function/data-integration/src/server2.js",
-    "start:client": "node ./generator-function/data-integration/src/client.js" 
+    "start:server2": "node --no-warnings ./generator-function/data-integration/src/server2.js",
+    "start:server1": "node --no-warnings ./generator-function/data-integration/src/server1.js",
+    "start:client": "node --no-warnings ./generator-function/data-integration/src/client.js" 
   },
   "repository": {
     "type": "git",
