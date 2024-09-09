@@ -33,6 +33,8 @@ kiểm tra ip của các container
 ```
 docker network inspect mongoNet | grep 'r\|IPv4Address'
 ```
+docker inspect   -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kizuna:latest
+
 
 
 way 2

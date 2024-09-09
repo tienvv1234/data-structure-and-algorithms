@@ -16,11 +16,11 @@ const mysql = require('mysql2');
 // if we call end or release connection, it will create a new connection
 
 const pool = mysql.createPool({
-    host: '127.0.0.1',
-    port: 3307,
-    user: 'test',
+    host: 'db',
+    port: 3306,
+    user: 'root',
     password: 'testpass',
-    database: 'test',
+    database: 'mydb',
     connectionLimit: 10,
 });
 
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
             console.log(err);
             return;
         }
-        pool.query('SELECT * FROM users limit 10', (err, rows) => {
+        pool.query('SELECT * FROM user limit 10', (err, rows) => {
             if (err) console.log(err);
             res.send(rows[0]);
         });

@@ -4,11 +4,11 @@ const mysql = require('mysql2');
 
 function getConnection() {
     return mysql.createConnection({
-        host: '127.0.0.1',
-        port: 3307,
-        user: 'test',
+        host: 'db',
+        port: 3306,
+        user: 'root',
         password: 'testpass',
-        database: 'test',
+        database: 'mydb',
         insecureAuth: true,
     })
 }

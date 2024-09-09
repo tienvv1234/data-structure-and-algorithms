@@ -29,3 +29,6 @@ vs
 
 hacknews will using index to find the records and return only the results (50 records)
 db.hacknews.find({blogId: 1, commentId: { $gt: 200}}).limit(50).explain('executionStats')
+
+docker inspect   -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kizuna:latest
+

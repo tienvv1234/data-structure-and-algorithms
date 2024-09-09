@@ -1,0 +1,27 @@
+{
+  "name": "data-structure-and-algorithms",
+  "version": "1.0.0",
+  "description": "![Big O notation](https://cdn-media-1.freecodecamp.org/images/1*KfZYFUT2OKfjekJlCeYvuQ.jpeg)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "start:server2": "node --no-warnings ./generator-function/data-integration/src/server2.js",
+    "start:server1": "node --no-warnings ./generator-function/data-integration/src/server1.js",
+    "start:client": "node --no-warnings ./generator-function/data-integration/src/client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-tienvv1234:tienvv1234/data-structure-and-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^6.1.5",
+    "mysql2": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.15"
+  }
+}

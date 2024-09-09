@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "![Big O notation](https://cdn-media-1.freecodecamp.org/images/1*KfZYFUT2OKfjekJlCeYvuQ.jpeg)",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon",
     "start:server2": "node --no-warnings ./generator-function/data-integration/src/server2.js",
     "start:server1": "node --no-warnings ./generator-function/data-integration/src/server1.js",
-    "start:client": "node --no-warnings ./generator-function/data-integration/src/client.js" 
+    "start:client": "node --no-warnings ./generator-function/data-integration/src/client.js"
   },
   "repository": {
     "type": "git",
@@ -20,15 +19,22 @@
   "dependencies": {
     "ajv": "^8.12.0",
     "axios": "^1.4.0",
+    "csv": "^6.3.9",
     "express": "^4.18.2",
     "helmet": "^6.1.5",
+    "iconv": "^3.0.1",
     "ioredis": "^5.3.2",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.0.4",
     "mysql2": "^3.3.1",
+    "nodemailer": "^6.9.14",
     "nodemon": "^2.0.22",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
-    "passport-jwt": "^4.0.1"
+    "passport-jwt": "^4.0.1",
+    "twilio": "^5.2.3"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.15"
   }
 }
