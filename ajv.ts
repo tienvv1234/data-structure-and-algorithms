@@ -51,3 +51,12 @@ console.log(data)
 // because under the hood it is just a pointer, \
 // that's why the reference needs to be copied in the same executiono block. 
 // Note that Node is single-threaded and you do not have concurrency
+
+export type AttrFields = Partial<Record<`attr${number}`, any>>;
+
+const abc: AttrFields = {
+  attr1: 'abc',
+  attr2: 123,
+  attr3: true,
+  attrsdf: 'sdf',
+}
